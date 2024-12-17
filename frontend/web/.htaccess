@@ -1,8 +1,6 @@
 RewriteEngine on
- 
-# если это папка или файл, открываем его
+
+# Если файл или директория не существует, то перенаправляем на index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
- 
-# в противном случае перенаправляем на index.php
 RewriteRule . index.php
