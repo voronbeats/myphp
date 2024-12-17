@@ -18,13 +18,15 @@ services:
 
   db:
     image: mysql:8.0
-    container_name: mysql-container
+    container_name: yii2_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: yii2
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: yii2_advanced
+      MYSQL_USER: yii2user
+      MYSQL_PASSWORD: yii2password
     ports:
-      - "3306:3306" # Пробрасываем порт 3306
+      - "3306:3306"
     volumes:
       - db-data:/var/lib/mysql
 
